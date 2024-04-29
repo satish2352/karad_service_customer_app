@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#662d91</color>
+    <color name="colorPrimaryDark">#131313</color>
+
+
+    <color name="white">#FFF</color>
+    <color name="black">#000</color>
+    <color name="gray">#cea6a6a6</color>
+    <color name="pin_normal">#9E9D9D</color>
+    <color name="apptheme2">#8C72BA</color>
+    <color name="apptheme">#662d91</color>
+    <color name="grey_light">#f6f6f6</color>
+    <color name="transparent">#00000000</color>
+    <color name="buttonbg">#A12C47</color>
+    <color name="backcolor">#F8E2F7</color>
+
+    <!--colors for profile-->
+    <color name="red">#FF0E00</color>
+
+    <color name="dialog_color_1">#FDD736</color>
+    <color name="dialog_color_2">#3B5796</color>
+</resources>

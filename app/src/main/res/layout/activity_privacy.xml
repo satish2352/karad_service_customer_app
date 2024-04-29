@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.PrivacyActivity">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_privacy"
+                android:padding="10dp"
+                android:textStyle="normal"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fifteen"
+                android:visibility="gone"
+                android:overScrollMode="never"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbar"
+                android:layout_marginTop="20dp"
+                android:text="Privacy Policy"
+                android:textAlignment="center"
+                android:textColor="@color/apptheme2"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="Your website may use the Privacy Policy given below:"
+                android:textAlignment="viewStart"
+                android:textColor="@color/apptheme2"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/privacyfirst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/alike"
+                android:text="@string/privacyone"
+                android:textColor="@color/black"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:text="USER INFORMATION"
+                android:layout_marginHorizontal="20dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/apptheme2"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/privacysecond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/alike"
+                android:text="@string/privacytwo"
+                android:textColor="@color/black"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:text="COOKIES"
+                android:layout_marginHorizontal="20dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/apptheme2"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/privacythird"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/alike"
+                android:text="@string/privacythree"
+                android:textColor="@color/black"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbar"
+                android:layout_marginTop="17dp"
+                android:text="LINKS TO THE OTHER SITES"
+                android:layout_marginHorizontal="20dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/apptheme2"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/privacyforth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/alike"
+                android:text="@string/privacyforth"
+                android:textColor="@color/black"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbar"
+                android:layout_marginTop="17dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="INFORMATION SHARING"
+                android:textAlignment="textStart"
+                android:textColor="@color/apptheme2"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/privacyfive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/alike"
+                android:text="@string/privacyfifth"
+                android:textColor="@color/black"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:text="INFORMATION SHARING"
+                android:layout_marginHorizontal="20dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/apptheme2"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/privacysix"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/alike"
+                android:text="@string/privacysix"
+                android:textColor="@color/black"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="INFORMATION SHARING"
+                android:textAlignment="textStart"
+                android:textColor="@color/apptheme2"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/privacyseven"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/alike"
+                android:text="@string/privacyseven"
+                android:textColor="@color/black"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include layout="@layout/no_record_found_layout"
+        android:id="@+id/noRecordLayout"/>
+</LinearLayout>

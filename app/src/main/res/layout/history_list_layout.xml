@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/ten"
+        android:text="Jan 20,2021"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/seven"
+        android:orientation="vertical"
+        app:cardCornerRadius="@dimen/ten"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#E1F4F4F4"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/five">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_business_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/five"
+                    android:text="Business Name"
+                    android:textColor="@color/apptheme"
+                    android:textSize="@dimen/eighteen"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_ownre_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/five"
+                    android:text="Ownner Name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/thirteen" />
+
+                <TextView
+                    android:id="@+id/tv_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/five"
+                    android:text="Mobile Name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/thirteen"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/five"
+                    android:text="Address"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/thirteen" />
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/five"
+                    android:text="Address"
+                    android:textColor="@color/apptheme"
+                    android:textSize="@dimen/thirteen"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="@dimen/mar_pad_20"
+                android:layout_height="@dimen/mar_pad_20"
+                android:layout_marginStart="-20dp"
+                android:src="@drawable/ic_baseline_chevron_right_24"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

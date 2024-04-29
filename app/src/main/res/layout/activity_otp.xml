@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgeView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:src="@drawable/applogop"
+            android:layout_marginTop="80dp"
+            android:elevation="@dimen/ten" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="@dimen/ten"
+            android:layout_marginTop="@dimen/fifty">
+            <View
+                android:layout_width="@dimen/mar_pad_30"
+                android:layout_height="@dimen/mar_pad_50"
+                android:background="@color/apptheme"/>
+            <View
+                android:layout_width="@dimen/fifteen"
+                android:layout_marginStart="@dimen/ten"
+                android:layout_height="@dimen/mar_pad_50"
+                android:background="@color/apptheme"/>
+            <View
+                android:layout_width="@dimen/seven"
+                android:layout_marginStart="@dimen/ten"
+                android:layout_height="@dimen/mar_pad_50"
+                android:background="@color/apptheme"/>
+            <View
+                android:layout_width="@dimen/two"
+                android:layout_marginStart="@dimen/ten"
+                android:layout_height="@dimen/mar_pad_50"
+                android:background="@color/apptheme"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/seven"
+                android:gravity="start"
+                android:padding="@dimen/ten"
+                android:text="OTP Verification"
+                android:textColor="@color/apptheme"
+                android:textSize="@dimen/twentythree"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/seven"
+            android:layout_marginEnd="@dimen/five"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/ten"
+            android:padding="@dimen/five"
+            android:text="Enter 4 Digit Number Received from Your Mobile."
+            android:textColor="@color/apptheme"
+            android:textSize="@dimen/fifteen"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:id="@+id/otpdigits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/twenty"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/tv_otp1"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:background="@drawable/otp_squre"
+                android:gravity="center"
+                android:hint="-"
+                android:inputType="number"
+                android:maxLength="1"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/tv_otp2"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/otp_squre"
+                android:gravity="center"
+                android:hint="-"
+                android:inputType="number"
+                android:maxLength="1"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/tv_otp3"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:layout_marginLeft="@dimen/ten"
+                android:background="@drawable/otp_squre"
+                android:gravity="center"
+                android:hint="-"
+                android:inputType="number"
+                android:maxLength="1"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/tv_otp4"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:layout_marginLeft="@dimen/ten"
+                android:background="@drawable/otp_squre"
+                android:gravity="center"
+                android:hint="-"
+                android:inputType="number"
+                android:maxLength="1"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/tv_otp5"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:layout_marginLeft="@dimen/ten"
+                android:background="@drawable/otp_squre"
+                android:gravity="center"
+                android:hint="-"
+                android:visibility="gone"
+                android:inputType="number"
+                android:maxLength="1"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/resendotp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/seven"
+            android:layout_marginEnd="@dimen/five"
+            android:gravity="center"
+            android:padding="@dimen/seven"
+            android:text="00:59"
+            android:textColor="@color/red"
+            android:textSize="@dimen/fifteen"
+            android:textStyle="normal" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/ten"
+            android:layout_marginTop="@dimen/twenty"
+            android:layout_marginRight="@dimen/ten"
+            android:layout_marginBottom="@dimen/fifty"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <ImageButton
+                    android:id="@+id/verify"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/twenty"
+                    android:layout_marginBottom="@dimen/twenty"
+                    android:background="@drawable/circle_apptheme"
+                    android:padding="@dimen/ten"
+                    android:src="@drawable/ic_left" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "794378488207",
+    "project_id": "karad-1d400",
+    "storage_bucket": "karad-1d400.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794378488207:android:db24866f103816d17fe3fa",
+        "android_client_info": {
+          "package_name": "com.example.karaduser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794378488207-97ihk5iqkvbrb5bmffrg7m4a8d0kppfp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARZsn-vhtYtBWryUJJiRI1IGNxEO55MlE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794378488207-97ihk5iqkvbrb5bmffrg7m4a8d0kppfp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794378488207:android:5142d2c08bafb8977fe3fa",
+        "android_client_info": {
+          "package_name": "com.example.karadvenderapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794378488207-97ihk5iqkvbrb5bmffrg7m4a8d0kppfp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARZsn-vhtYtBWryUJJiRI1IGNxEO55MlE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794378488207-97ihk5iqkvbrb5bmffrg7m4a8d0kppfp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

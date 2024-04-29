@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:layout_marginBottom="@dimen/five"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_main"
+    android:fitsSystemWindows="false">
+
+          <FrameLayout
+              android:id="@+id/main_frame"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_above="@+id/bottom_navigation" />
+
+
+          <com.google.android.material.bottomnavigation.BottomNavigationView
+              android:id="@+id/bottom_navigation"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="bottom"
+              android:background="@drawable/rounded_button_background_apptheme"
+              android:layout_alignParentBottom="true"
+              app:itemTextColor="@drawable/selector_bottombar_text"
+              app:itemIconTint="@drawable/selector_bottombar_image"
+              app:menu="@menu/dashboardnewssss"
+              app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+              app:layout_scrollFlags="scroll|enterAlways|snap"
+              app:labelVisibilityMode="labeled"/>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

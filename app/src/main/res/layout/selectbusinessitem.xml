@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/seven"
+        android:orientation="vertical"
+        app:cardCornerRadius="@dimen/ten"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#E1F4F4F4"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/five">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/tv_business_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Business Name"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="40dp"
+                    android:textColor="@color/apptheme"
+                    android:textSize="@dimen/eighteen"
+                    android:textStyle="bold"/>
+
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/one"
+                    android:text="description"
+                    android:padding="5dp"
+                    android:layout_marginLeft="42dp"
+                    android:layout_marginRight="40dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/thirteen" />
+
+                <TextView
+                    android:id="@+id/tv_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/five"
+                    android:layout_marginLeft="42dp"
+                    android:layout_marginRight="40dp"
+                    android:text="Rate"
+                    android:padding="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/thirteen" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="@dimen/mar_pad_20"
+                android:layout_height="@dimen/mar_pad_20"
+                android:layout_marginStart="-20dp"
+                android:src="@drawable/ic_baseline_chevron_right_24" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
