@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: pl.droidsonroids.gif:android-gif-drawable:1.2.28@aar" external-system-id="GRADLE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7dc7cb29dfb0b15be2305c7fb8623fa1/transformed/jetified-android-gif-drawable-1.2.28/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7dc7cb29dfb0b15be2305c7fb8623fa1/transformed/jetified-android-gif-drawable-1.2.28/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7dc7cb29dfb0b15be2305c7fb8623fa1/transformed/jetified-android-gif-drawable-1.2.28/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/pl.droidsonroids.gif/android-gif-drawable/1.2.28/8faa2d341f355f45f40e509f1ac02e96e17df518/android-gif-drawable-1.2.28-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/pl.droidsonroids.gif/android-gif-drawable/1.2.28/54b2fc78aedc75f6b838c577647b0c06a7d2318b/android-gif-drawable-1.2.28-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
