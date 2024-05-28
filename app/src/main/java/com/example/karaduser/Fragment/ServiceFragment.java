@@ -163,7 +163,7 @@ public class ServiceFragment extends Fragment {
                 Shared_Preferences.getPrefs(getContext(), Constants.DISRICT_ID),
                 Shared_Preferences.getPrefs(getContext(), Constants.TALUKA_ID),
                 Shared_Preferences.getPrefs(getContext(), Constants.CITY_ID),
-                "1",
+                Shared_Preferences.getPrefs(getContext(), Constants.AREA_ID),
                 cate_id);
 
 

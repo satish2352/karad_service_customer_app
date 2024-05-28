@@ -81,7 +81,7 @@ public class FCMIntentService extends FirebaseMessagingService {
                         this,
                         requestCode,
                         i,
-                        PendingIntent.FLAG_UPDATE_CURRENT
+                        PendingIntent.FLAG_MUTABLE
                 );
         String NOTIFICATION_CHANNEL_ID = "my_app"; // default_channel_id
         NotificationCompat.Builder builder;
