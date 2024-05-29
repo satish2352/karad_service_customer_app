@@ -85,7 +85,6 @@ public class FCMIntentService extends FirebaseMessagingService {
                 );
         String NOTIFICATION_CHANNEL_ID = "my_app"; // default_channel_id
         NotificationCompat.Builder builder;
-//samll notification
         Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.applogop);
         builder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
                 .setContentTitle(title)

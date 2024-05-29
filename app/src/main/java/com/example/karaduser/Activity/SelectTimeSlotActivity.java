@@ -185,7 +185,7 @@ public class SelectTimeSlotActivity extends AppCompatActivity implements DateAda
                         startActivity(new Intent(SelectTimeSlotActivity.this, MainActivity.class));
                         finish();
                     }
-                    mDialog.show();
+                    mDialog.dismiss();
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (JSONException e) {
@@ -196,7 +196,7 @@ public class SelectTimeSlotActivity extends AppCompatActivity implements DateAda
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t)
             {
-                mDialog.show();
+                mDialog.dismiss();
             }
         });
 
@@ -234,17 +234,13 @@ public class SelectTimeSlotActivity extends AppCompatActivity implements DateAda
                                 Toast.makeText(SelectTimeSlotActivity.this, jsonObject.getString("ResponseMessage"), Toast.LENGTH_SHORT).show();
                             }
                         }
-
                     }
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
             }
-
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
 

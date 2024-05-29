@@ -3,14 +3,19 @@ package com.example.karaduser.Activity;
 import static java.security.AccessController.getContext;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.FileUtils;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,6 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +31,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.karaduser.MainActivity;
 import com.example.karaduser.ModelList.DistrictList;
@@ -88,6 +95,8 @@ public class UpdateProfileActivity extends UtilityRuntimePermission implements C
     String Date = new SimpleDateFormat("yyyymmdd", Locale.getDefault()).format(new Date());
     String Time = new SimpleDateFormat("HHmmss",Locale.getDefault()).format(new Date());
 
+    LinearLayout layoutSelectImage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,6 +108,7 @@ public class UpdateProfileActivity extends UtilityRuntimePermission implements C
                 onBackPressed();
             }
         });
+        layoutSelectImage=findViewById(R.id.layoutSelectImage);
         mDialog = new SimpleArcDialog(UpdateProfileActivity.this);
         mDialog.setCancelable(false);
         findBy();
@@ -150,7 +160,7 @@ public class UpdateProfileActivity extends UtilityRuntimePermission implements C
         });
 
 
-        text_upload_image_profile.setOnClickListener(new View.OnClickListener() {
+        layoutSelectImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
@@ -163,13 +173,21 @@ public class UpdateProfileActivity extends UtilityRuntimePermission implements C
                     {
                         if(options[i].equals("camera"))
                         {
-                            Intent takepic = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                            startActivityForResult(takepic,0);
+                            if(checkAndRequestCameraPermission(UpdateProfileActivity.this,100))
+                            {
+                                Intent takepic = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                                startActivityForResult(takepic,0);
+                            }
+
                         }
                         else if(options[i].equals("Gallery"))
                         {
-                            Intent gallery = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                            startActivityForResult(gallery,1);
+                            if(checkAndRequestReadImagePermission(UpdateProfileActivity.this,101))
+                            {
+                                Intent gallery = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                                startActivityForResult(gallery,1);
+                            }
+
                         }
                         else
                         {
@@ -259,7 +277,103 @@ public class UpdateProfileActivity extends UtilityRuntimePermission implements C
         }
     }
 
+    public static boolean checkAndRequestReadImagePermission(Activity activity, int requestCode) {
+        String[] permissions = null;
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            // Android 13+ (API level 33): Use specific media permission
+            permissions = new String[]{Manifest.permission.READ_MEDIA_IMAGES};
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            // Android 11 and above: Use READ_EXTERNAL_STORAGE
+            permissions = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE};
+        } else {
+            // Android 10 and below: Use READ_EXTERNAL_STORAGE
+            permissions = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE};
+        }
+
+        if (permissions != null) {
+            SharedPreferences preferences = activity.getSharedPreferences("permission_prefs", Context.MODE_PRIVATE);
+            boolean isFirstRequest = preferences.getBoolean("isFirstRequestReadImages", true);
+
+            // Check permission
+            int permissionCheck = ContextCompat.checkSelfPermission(activity, permissions[0]);
+            if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
+                // Permission already granted
+                return true;
+            } else if (ActivityCompat.shouldShowRequestPermissionRationale(activity, permissions[0])) {
+                // Permission not granted but can still be requested
+                ActivityCompat.requestPermissions(activity, permissions, requestCode);
+                preferences.edit().putBoolean("isFirstRequestReadImages", false).apply();
+                return false; // Indicate permission not granted yet
+            } else if (isFirstRequest) {
+                // First time asking for permission
+                ActivityCompat.requestPermissions(activity, permissions, requestCode);
+                preferences.edit().putBoolean("isFirstRequestReadImages", false).apply();
+                return false; // Indicate permission not granted yet
+            } else {
+                // Permission permanently denied, navigate to settings
+                navigateAppSettings(activity);
+                return false; // Indicate permission not granted
+            }
+        }
+
+        // No permissions to check (shouldn't happen)
+        return true; // Assuming no permission check is a success (review if needed)
+    }
+
+    private static void navigateAppSettings(Activity activity) {
+
+        AlertDialog.Builder builder=new AlertDialog.Builder(activity)
+                .setTitle("Allow Permission In Settings")
+                .setMessage("Allow All the requested permission from \nSettings->permissions")
+                .setPositiveButton("Goto Settings", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                        Uri uri = Uri.fromParts("package", activity.getPackageName(), null);
+                        intent.setData(uri);
+                        if (intent.resolveActivity(activity.getPackageManager()) != null) {
+                            activity.startActivity(intent);
+                        }
+                    }
+                });
+
+        AlertDialog alertDialog=builder.create();
+        alertDialog.show();
+    }
+
+
+
+    private static boolean shouldShowRequestPermissionRationale(Activity activity, String permission) {
+        return ActivityCompat.shouldShowRequestPermissionRationale(activity, permission);
+    }
+    public static boolean checkAndRequestCameraPermission(Activity activity, int requestCode) {
+        String[] permissions = new String[]{Manifest.permission.CAMERA};
+        SharedPreferences preferences = activity.getSharedPreferences("permission_prefs", Context.MODE_PRIVATE);
+        boolean isFirstRequest = preferences.getBoolean("isFirstRequest", true);
+
+        // Check permission
+        int permissionCheck = ContextCompat.checkSelfPermission(activity, permissions[0]);
+        if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
+            // Permission already granted
+            return true;
+        } else if (ActivityCompat.shouldShowRequestPermissionRationale(activity, permissions[0])) {
+            // Permission not granted but can still be requested
+            ActivityCompat.requestPermissions(activity, permissions, requestCode);
+            preferences.edit().putBoolean("isFirstRequest", false).apply();
+            return false; // Indicate permission not granted yet
+        } else if (isFirstRequest) {
+            // First time asking for permission
+            ActivityCompat.requestPermissions(activity, permissions, requestCode);
+            preferences.edit().putBoolean("isFirstRequest", false).apply();
+            return false; // Indicate permission not granted yet
+        } else {
+            // Permission permanently denied, navigate to settings
+            navigateAppSettings(activity);
+            return false; // Indicate permission not granted
+        }
+    }
 
     private boolean validatefield() {
         boolean result = true;

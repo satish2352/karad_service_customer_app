@@ -118,7 +118,7 @@
                         android:layout_gravity="center"
                         android:layout_marginRight="10dp"
                         android:padding="@dimen/five"
-                        android:src="@drawable/ic_baseline_help_outline_24" />
+                        android:src="@drawable/settings_24px" />
 
 
                 </LinearLayout>

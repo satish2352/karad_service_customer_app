@@ -20,8 +20,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.karaduser.Activity.NotificationActivity;
+import com.example.karaduser.Activity.UpdateProfileActivity;
 import com.example.karaduser.Fragment.AppointmentFragment;
 import com.example.karaduser.Fragment.HomeFragment;
+import com.example.karaduser.Fragment.Profile;
 import com.example.karaduser.Fragment.ServiceFragment;
 import com.example.karaduser.Fragment.help;
 import com.example.karaduser.NetworkController.APIInterface;
@@ -62,6 +64,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         username=findViewById(R.id.username);
         userlocation=findViewById(R.id.location);
         userprofileImg=findViewById(R.id.userprofile);
+        userprofileImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this, Profile.class);
+                startActivity(intent);
+            }
+        });
 
         noti_count();
 
