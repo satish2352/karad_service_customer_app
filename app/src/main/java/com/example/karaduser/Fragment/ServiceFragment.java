@@ -78,9 +78,11 @@ public class ServiceFragment extends Fragment {
         filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (validateFields()) {
+                //if (validateFields()) {
                     BusinessListting(cate_id);
-                }
+                //}else{
+                    //BusinessListting("0");
+                //}
             }
         });
         getcategoryData();
@@ -137,6 +139,7 @@ public class ServiceFragment extends Fragment {
                             }
 
                             public void onNothingSelected(AdapterView<?> adapterView) {
+                                BusinessListting("0");
                                 return;
                             }
                         });

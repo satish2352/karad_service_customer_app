@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.daimajia.slider:library:1.1.5@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2a0e552a1859ca29a392facd120d40e9/transformed/jetified-library-1.1.5/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/2a0e552a1859ca29a392facd120d40e9/transformed/jetified-library-1.1.5/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2a0e552a1859ca29a392facd120d40e9/transformed/jetified-library-1.1.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/46dcbc2df5f2d48ec56687fb9f8fa70a/transformed/jetified-library-1.1.5/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/46dcbc2df5f2d48ec56687fb9f8fa70a/transformed/jetified-library-1.1.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/46dcbc2df5f2d48ec56687fb9f8fa70a/transformed/jetified-library-1.1.5/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.daimajia.slider/library/1.1.5/80f7ad12f4db46326912a82285f58ebe4681740f/library-1.1.5-javadoc.jar!/" />

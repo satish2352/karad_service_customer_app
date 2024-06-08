@@ -78,10 +78,8 @@ public class AppointmentFragment extends Fragment {
         filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (validateFields())
-                {
+
                     BusinessListting(cate_id);
-                }
             }
         });
         getcategoryData();
@@ -138,9 +136,12 @@ public class AppointmentFragment extends Fragment {
                                 //  On selecting a spinner item
                                 String item = adapterView.getItemAtPosition(i).toString();
                                 cate_id = country.get(i).getFld_business_category_id();
+                                Log.d("mytag", "onItemSelected: " + cate_id);
                             }
 
                             public void onNothingSelected(AdapterView<?> adapterView) {
+
+                                BusinessListting("0");
                                 return;
                             }
                         });

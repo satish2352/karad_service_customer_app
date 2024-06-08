@@ -113,6 +113,40 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
             Log.d("hemant",homeDefaultLists.get(position).getBusiness_info_id());
                 }
             });
+        holder.tv_business_name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                context.startActivity(new Intent(context,SelectTimeSlotActivity.class));
+                Shared_Preferences.setPrefs(context, "business_info_id", homeDefaultLists.get(position).getBusiness_info_id());
+                Shared_Preferences.setPrefs(context, "business_Profile", homeDefaultLists.get(position).getBusiness_image());
+                Shared_Preferences.setPrefs(context, "fld_business_id", homeDefaultLists.get(position).getFld_business_id());
+                Shared_Preferences.setPrefs(context, "vendor_id", homeDefaultLists.get(position).getVendor_id());
+                Shared_Preferences.setPrefs(context, "business_vendor", homeDefaultLists.get(position).getBusiness_info_name());
+                Shared_Preferences.setPrefs(context, "business_Adrs", homeDefaultLists.get(position).getAddress());
+                Shared_Preferences.setPrefs(context, "business_type", homeDefaultLists.get(position).getFld_business_name());
+                ((Activity) context).overridePendingTransition(R.anim.right_in, R.anim.left_out);
+
+                Log.d("hemant",homeDefaultLists.get(position).getBusiness_info_id());
+            }
+        });
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                context.startActivity(new Intent(context,SelectTimeSlotActivity.class));
+                Shared_Preferences.setPrefs(context, "business_info_id", homeDefaultLists.get(position).getBusiness_info_id());
+                Shared_Preferences.setPrefs(context, "business_Profile", homeDefaultLists.get(position).getBusiness_image());
+                Shared_Preferences.setPrefs(context, "fld_business_id", homeDefaultLists.get(position).getFld_business_id());
+                Shared_Preferences.setPrefs(context, "vendor_id", homeDefaultLists.get(position).getVendor_id());
+                Shared_Preferences.setPrefs(context, "business_vendor", homeDefaultLists.get(position).getBusiness_info_name());
+                Shared_Preferences.setPrefs(context, "business_Adrs", homeDefaultLists.get(position).getAddress());
+                Shared_Preferences.setPrefs(context, "business_type", homeDefaultLists.get(position).getFld_business_name());
+                ((Activity) context).overridePendingTransition(R.anim.right_in, R.anim.left_out);
+
+                Log.d("hemant",homeDefaultLists.get(position).getBusiness_info_id());
+            }
+        });
 //        }
 //        else
 //            {
